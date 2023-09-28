@@ -9,7 +9,7 @@ import cors from "cors";
 dotenv.config();
 
 const app=express();
-const port=5000;
+const port = process.env.PORT || 5000;
 app.use(cors());
 
 
@@ -24,6 +24,3 @@ app.use("/booking",bookingsRouter);
 mongoose.connect(`mongodb+srv://admin:${process.env.MOGODBPASSWORD}@cluster0.lnuklyy.mongodb.net/`).then(app.listen(port,()=>{
     console.log(`the port is running in ${port} and connected to the Database`) 
 })).catch((e)=>console.log(e));
-
-
-

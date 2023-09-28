@@ -1,0 +1,8 @@
+services:
+  - name: backend
+    env:
+      - key: MOGODBPASSWORD
+        from: env
+        name: MOGODBPASSWORD
+    buildCommand: npm install
+    startCommand: npm start
